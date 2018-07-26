@@ -1,17 +1,18 @@
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
+var models = require('./models/models');
 
 // If modifying these scopes, delete credentials.json.
 const SCOPES = ['https://www.googleapis.com/auth/calendar'];
 const TOKEN_PATH = 'token.json';
 
 // Load client secrets from a local file.
-fs.readFile('credentials.json', (err, content) => {
-  if (err) return console.log('Error loading client secret file:', err);
-  // Authorize a client with credentials, then call the Google Calendar API.
-  authorize(JSON.parse(content), createEvent);
-});
+// fs.readFile('credentials.json', (err, content) => {
+//   if (err) return console.log('Error loading client secret file:', err);
+//   // Authorize a client with credentials, then call the Google Calendar API.
+//   authorize(JSON.parse(content), createEvent);
+// });
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -134,3 +135,10 @@ function createEvent(auth){
           console.log('Event created: %s', event.summary);
         });
 }
+ module.export ={
+   authorize: authorize,
+   getAccessToken: getAccessToken,
+   listEvents: listEvents,
+   createEvent: createEvent
+
+ }

@@ -41,6 +41,7 @@
     "googleapis": "^27.0.0",
     "hbs": "^4.0.1",
     "http-server": "^0.11.1",
+    "mongoose": "^5.2.5",
     "path": "^0.12.7",
     "request": "^2.87.0"
   }
